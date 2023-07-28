@@ -20,6 +20,10 @@
         android:theme="@style/Theme.N16Demo01"
         tools:targetApi="31">
         <receiver
+            android:name=".recievers.MyCustomReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+        <receiver
             android:name=".recievers.SMSReceiver"
             android:enabled="true"
             android:exported="true">
