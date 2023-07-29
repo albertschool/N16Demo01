@@ -18,8 +18,8 @@ import android.widget.Toast;
 
 public class NetworkStateReceiver extends BroadcastReceiver {
     @Override
-    public void onReceive(Context context, Intent intent) {
-        if (intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
+    public void onReceive(Context context, Intent ri) {
+        if (ri.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
             ConnectivityManager connectivityManager =
                     (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 

@@ -10,9 +10,9 @@ import android.widget.Toast;
 public class SMSReceiver extends BroadcastReceiver {
 
     @Override
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive(Context context, Intent ri) {
         // Retrieve SMS message data
-        Bundle bundle = intent.getExtras();
+        Bundle bundle = ri.getExtras();
         SmsMessage[] msgs = null;
         String str = "";
         if (bundle != null) {

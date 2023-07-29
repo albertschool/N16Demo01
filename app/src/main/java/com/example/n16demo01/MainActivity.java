@@ -32,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
 //      ! Not needed when receiver is static !
 //    private SMSReceiver smsReceiver;
     private boolean checkData = false;
-    private final String CUSTOM_ACTION = "com.example.n16demo01.recievers.CustomReceiver";
-
+    private final String CUSTOM_ACTION = "com.example.n16demo01.receivers.CustomReceiver";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
         if (!checkData) {
             networkStateReceiver = new NetworkStateReceiver();
 
-            IntentFilter intentFilter = new IntentFilter();
-            intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+            IntentFilter connectFilter = new IntentFilter();
+            connectFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
 
-            registerReceiver(networkStateReceiver, intentFilter);
+            registerReceiver(networkStateReceiver, connectFilter);
             checkData = true;
             btn.setText("Turn off Data Receiver");
         } else {
